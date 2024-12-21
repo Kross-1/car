@@ -1,0 +1,55 @@
+body {
+  margin: 0;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100vh;
+  background-color: #87CEEB; /* Голубой фон как небо */
+}
+
+.car {
+  position: absolute;
+  width: 200px;
+  height: 100px;
+  background-color: red;
+  border-radius: 20px; /* Закругляем углы для кузова */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  animation: drive 5s linear infinite alternate;
+}
+
+.car::before {
+  content: '';
+  position: absolute;
+  top: -40px;
+  width: 120px;
+  height: 60px;
+  background-color: red;
+  border-radius: 15px;
+}
+
+.wheel {
+  width: 40px;
+  height: 40px;
+  background-color: black;
+  border-radius: 50%;
+  margin: 0 20px;
+}
+
+.wheels {
+  display: flex;
+  justify-content: space-between;
+  width: 160px;
+}
+
+@keyframes drive {
+  0% {
+      transform: translateX(-200px);
+  }
+  100% {
+      transform: translateX(calc(100vw - 250px));
+  }
+}
